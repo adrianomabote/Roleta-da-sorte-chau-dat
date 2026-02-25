@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Roleta da Sorte - Gire e ganhe prêmios">
+    <title>Roleta da Sorte</title>
+    <link rel="stylesheet" href="/static/css/style.min.css">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+<body>
+    <!-- Melhores Vencedores 2025 -->
+    <section class="winners-section">
+        <div class="container">
+            <h2 class="winners-title">TOP 5 MELHORES VENCEDORES EM 2025</h2>
+            <div class="winners-scroll" id="winnersScroll">
+                <div class="winner-item">
+                    <div class="winner-photo-circle">
+                        <img src="/static/images/vicente.jpg" alt="Vicente">
+                    </div>
+                    <h3 class="winner-name-small">Vicente</h3>
+                    <p class="winner-prize-small">5.000 MT</p>
+                </div>
+                <div class="winner-item">
+                    <div class="winner-photo-circle">
+                        <img src="/static/images/amelia.jpg" alt="Amélia">
+                    </div>
+                    <h3 class="winner-name-small">Amélia</h3>
+                    <p class="winner-prize-small">10.000 MT</p>
+                </div>
+                <div class="winner-item">
+                    <div class="winner-photo-circle">
+                        <img src="/static/images/joana.jpg" alt="Joana">
+                    </div>
+                    <h3 class="winner-name-small">Joana</h3>
+                    <p class="winner-prize-small">10.000 MT</p>
+                </div>
+                <div class="winner-item">
+                    <div class="winner-photo-circle">
+                        <img src="/static/images/lucas.jpg" alt="Lucas">
+                    </div>
+                    <h3 class="winner-name-small">Lucas</h3>
+                    <p class="winner-prize-small">10.000 MT</p>
+                </div>
+                <div class="winner-item">
+                    <div class="winner-photo-circle">
+                        <img src="/static/images/vencedor5000.jpg" alt="Francisco">
+                    </div>
+                    <h3 class="winner-name-small">Francisco</h3>
+                    <p class="winner-prize-small">5.000 MT</p>
+                </div>
+            </div>
+            <div class="winners-dots" id="winnersDots">
+                <span class="dot active" onclick="scrollToWinner(0)"></span>
+                <span class="dot" onclick="scrollToWinner(1)"></span>
+                <span class="dot" onclick="scrollToWinner(2)"></span>
+                <span class="dot" onclick="scrollToWinner(3)"></span>
+                <span class="dot" onclick="scrollToWinner(4)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cabeçalho -->
+    <section class="header-section">
+        <div class="container">
+            <p class="intro-text">Tens 2 tentativas grátis para girar a roleta. Não custa nada, clique no botão girar!</p>
+        </div>
+    </section>
+
+    <!-- Roleta -->
+    <section class="roulette-section">
+        <div class="container">
+            <h2>🎯 Tente a sua sorte! 🎯</h2>
+            <p>Clique no botão e gire a roleta para ganhar prêmios!</p>
+            
+            <div class="roulette-container">
+                <img src="/static/images/roleta.png" alt="Roleta" id="roleta">
+                <div class="roulette-pointer"></div>
+            </div>
+
+            <div class="button-container">
+                <button id="girarBtn" onclick="girarRoleta()">🎲 GIRAR</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timer -->
+    <section class="timer-section">
+        <div class="container">
+            <p class="timer-text">⏳ <em>Você tem 01:59 para girar e garantir sua chance gratuita!</em></p>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span id="minutes">02</span>
+                    <label>Minutos</label>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds">00</span>
+                    <label>Segundos</label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Informações -->
+    <section class="info-section">
+        <div class="container">
+            <div class="info-box">
+                <h3 class="info-title">Chegou sua vez de ganhar!</h3>
+                <div class="video-container">
+                    <video class="santa-video" autoplay loop controls controlsList="nodownload">
+                        <source src="/static/videos/santa.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeos
+                    </video>
+                </div>
+                <ul style="text-align: left; display: inline-block; margin-top: 20px;">
+                    <li>Para começar, basta apertar o botão dourado escrito <strong>GIRAR</strong>!</li>
+                    <li>💡 <strong>Você tem 2 tentativas totalmente grátis!</strong></li>
+                    <li>A roleta está cheia de prêmios esperando por você!</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prêmios -->
+    <section class="prizes-section">
+        <div class="container">
+            <h3>🎁 <strong>Prêmios da Roleta da Sorte</strong></h3>
+            <ul class="prizes-list">
+                <li>✅ <strong>10 Meticais</strong> – Comece com sorte!</li>
+                <li>✅ <strong>100 Meticais</strong> – Já dá pra comemorar!</li>
+                <li>✅ <strong>500 Meticais</strong> – Subindo o nível!</li>
+                <li>✅ <strong>1.000 Meticais</strong> – Agora sim!</li>
+                <li>✅ <strong>5.000 Meticais</strong> – Sorte grande!</li>
+                <li>✅ <strong>10.000 Meticais</strong> – O prêmio dos sonhos! 💸</li>
+            </ul>
+        </div>
+    </section>
+
+
+    <!-- Compartilhar -->
+    <section class="share-section">
+        <div class="container">
+            <h2>🔁 GANHE MAIS GIROS GRÁTIS!</h2>
+            <p>Compartilhe o site com seus amigos e ganhe <strong>+1 giro grátis</strong> a cada pessoa!</p>
+            
+            <div class="share-box">
+                <p>💬 Frase pronta para enviar:</p>
+                <input id="shareText" type="text" readonly value="🚀 Acabei de girar uma roleta e ganhei um prêmio! Você também pode ganhar até 10.000 MT grátis. Entra aqui: https://roleta-da-sorte.onrender.com/">
+                <button onclick="copyText()">📋 Copiar mensagem</button>
+            </div>
+
+            <a href="https://api.whatsapp.com/send?text=%F0%9F%9A%80%20Acabei%20de%20girar%20uma%20roleta%20e%20ganhei%20um%20pr%C3%AAmio!%20Voc%C3%AA%20tamb%C3%A9m%20pode%20ganhar%20at%C3%A9%2010.000%20MT%20gr%C3%A1tis.%20Entra%20aqui:%20https://roleta-da-sorte.onrender.com/" target="_blank" class="whatsapp-btn">
+                📲 Compartilhar no WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Termos de Uso e Direitos Reservados</strong></p>
+        <p><em>© 2025 Roleta da Sorte – Todos os direitos reservados.</em></p>
+        <p class="disclaimer">A presente simulação interativa tem como principal finalidade o estímulo à participação em ofertas promocionais vinculadas a plataformas externas. Os valores exibidos na roleta não representam prêmios efetivamente creditáveis.</p>
+        <p style="margin-top: 20px; text-align: center;">Site desenvolvido por <span style="color: #FF0000; font-weight: bold;">CYBER HACKER OFFICE</span></p>
+    </footer>
+
+    <!-- Pop-up -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h3>🎉 Resultado 🎉</h3>
+            <p id="popupText"></p>
+            <button id="girarNovamente" onclick="fecharPopUpEGirar()">🔁 Girar Novamente</button>
+            <a id="popupButton" href="https://abre.ai/resgate-seus-ganhos" target="_blank" onclick="fecharPopupERegistrar()">💰 REGISTRE-SE AGORA!</a>
+        </div>
+    </div>
+
+    <!-- Result Dialog After Registration -->
+    <div id="resultDialog" class="result-dialog">
+        <div class="result-dialog-content">
+            <span class="close-btn" onclick="fecharResultDialog()">&times;</span>
+            <h3>🎉 Resultado 🎉</h3>
+            <div class="result-message">
+                <p class="warning-text">⚠️ Você já usou suas 2 tentativas grátis!</p>
+                <p class="share-info">📱 Para ganhar mais giros, compartilhe este site com seus amigos no WhatsApp.</p>
+                <p class="bonus-text">Cada pessoa que entrar pelo seu link te dá <strong>+1 giro grátis!</strong></p>
+            </div>
+            <a href="https://api.whatsapp.com/send?text=%F0%9F%9A%80%20Acabei%20de%20girar%20uma%20roleta%20e%20ganhei%20um%20pr%C3%AAmio!%20Voc%C3%AA%20tamb%C3%A9m%20pode%20ganhar%20at%C3%A9%2010.000%20MT%20gr%C3%A1tis.%20Entra%20aqui:%20https://roleta-da-sorte.onrender.com/" target="_blank" class="share-now-btn">📱 COMPARTILHAR AGORA</a>
+        </div>
+    </div>
+
+    <script src="/static/js/confetti.browser.min.js"></script>
+    <script src="/static/js/main.min.js"></script>
+    <style>
+        * {
+            -webkit-user-select: none !important;
+            -moz-user-select: none !important;
+            -ms-user-select: none !important;
+            user-select: none !important;
+        }
+        input, textarea {
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
+        }
+        img {
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            user-drag: none;
+            pointer-events: none;
+        }
+    </style>
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S')) {
+                e.preventDefault();
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && (e.key === 'i' || e.key === 'I' || e.key === 'j' || e.key === 'J' || e.key === 'c' || e.key === 'C')) {
+                e.preventDefault();
+                return false;
+            }
+            if (e.key === 'F12') {
+                e.preventDefault();
+                return false;
+            }
+        });
+        document.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+            return false;
+        });
+    </script>
+</body>
+</html>
